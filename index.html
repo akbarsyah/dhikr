@@ -75,6 +75,20 @@ h1{font-family:var(--serif);font-weight:400;font-size:clamp(32px,8vw,48px);line-
 .reset[hidden]{display:none}
 .complete{margin:28px 0 0;text-align:center;font-family:var(--serif);font-size:18px;color:var(--accent)}
 footer{margin-top:36px;text-align:center;color:var(--muted);font-size:12px}
+
+/* session audio */
+.session-audio{margin:4px 0 22px;padding:14px 0 16px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.audio-head{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.audio-copy{min-width:0}
+.audio-kicker{margin:0 0 2px;font-size:11px;text-transform:uppercase;letter-spacing:.11em;color:var(--muted);font-weight:700}
+.audio-title{margin:0;font-family:var(--serif);font-size:18px;line-height:1.3}
+.audio-btn{flex:0 0 auto;min-height:42px;padding:0 14px;border:1px solid var(--line);border-radius:6px;background:var(--surface,var(--bg));color:var(--text);font-size:13px;font-weight:700;cursor:pointer}
+.audio-btn:hover{border-color:var(--accent);color:var(--accent)}
+.audio-player{margin-top:12px;overflow:hidden;border-radius:8px;background:#000;display:none}
+.audio-player.is-open{display:block}
+.audio-player iframe{display:block;width:100%;height:auto;aspect-ratio:16/9;min-height:200px;border:0}
+.audio-link{display:block;margin-top:8px;color:var(--muted);font-size:12px;text-decoration:underline;text-underline-offset:3px}
+@media (prefers-reduced-motion:reduce){.audio-btn{transition:none}}
 @media (max-width:420px){.app{--pad:16px}.tabs{gap:16px}}
 @media (max-width:350px){.top{flex-wrap:wrap}.eyebrow{flex:1 0 100%}}
 @media (prefers-reduced-motion:reduce){.bar>span{transition:none}}
@@ -115,6 +129,9 @@ window.addEventListener("error",function(e){var l=document.getElementById("list"
 <p class="complete" id="complete" role="status" hidden></p>
 <noscript>
 <p class="note" style="margin:0 0 8px">JavaScript tidak berjalan di tampilan ini (mis. pratinjau Files/Quick Look atau aplikasi chat), jadi penghitung dinonaktifkan. Buka file ini di browser untuk fitur lengkap. / JavaScript is not running in this viewer, so counters are disabled; open the file in a browser for the full app.</p>
+<div class="session-audio" style="margin-top:20px">
+  <div class="audio-head"><div class="audio-copy"><p class="audio-kicker">Audio</p><p class="audio-title">Dengarkan Dzikir Pagi</p></div><a class="audio-btn" href="https://youtu.be/8Pyo5IZvA14?t=13" target="_blank" rel="noopener noreferrer">▶ YouTube</a></div>
+</div>
 <h2 class="complete" style="text-align:left;margin-top:36px">Dzikir Pagi / Morning</h2>
 <article class="item"><div class="head" style="cursor:default"><span class="num">01</span><span class="title">Ayat Kursi / Ayat al-Kursi</span><span class="count">1×</span></div>
 <div class="body"><p class="arabic" lang="ar" dir="rtl">اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ</p><p class="latin" lang="ar-Latn">Allāhu lā ilāha illā huwa al-ḥayyu al-qayyūm. Lā ta’khużuhu sinatun wa lā nawm. Lahu mā fī al-samāwāti wa mā fī al-arḍ. Man żā al-lażī yasyfa‘u ‘indahu illā bi iżnih. Ya‘lamu mā baina aidīhim wa mā khalfahum. Wa lā yuḥīṭūna bi syai’in min ‘ilmihi illā bi mā syā’. Wasi‘a kursiyyuhu al-samāwāti wa al-arḍ. Wa lā ya’ūduhu ḥifẓuhumā. Wa huwa al-‘aliyyu al-‘aẓīm.</p>
@@ -188,6 +205,9 @@ window.addEventListener("error",function(e){var l=document.getElementById("list"
 <div class="body"><p class="arabic" lang="ar" dir="rtl">أَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ</p><p class="latin" lang="ar-Latn">Astagfirullāha wa atūbu ilaih.</p>
 <p class="label">Arti</p><p class="meaning">Aku memohon ampunan kepada Allah dan bertaubat kepada-Nya.</p><p class="label">Meaning</p><p class="meaning">I ask Allah for forgiveness and I repent to Him.</p>
 <p class="label">Dalil</p><p class="evidence">HR. Al-Bukhari/Fat-hul Baari XI/101 dan Muslim no. 2702. Dari Ibnu ‘Umar ia berkata: “Rasulullah ﷺ bersabda: ‘Wahai manusia, bertaubatlah kalian kepada Allah, sesungguhnya aku bertaubat kepada-Nya dalam sehari seratus kali.’” [HR. Muslim no. 2702 (42)]</p><p class="grade">Derajat: Shahih</p><p class="note">Dibaca 100× dalam sehari. Catatan: Jumlah yang terbanyak dari dzikir-dzikir Nabi adalah seratus diwaktu pagi dan seratus diwaktu sore. Adapun riwayat yang menyebutkan sampai seribu, seratus ribu atau penyebutan suatu bilangan yang diada-adakan adalah munkar, karena haditsnya dha’if bahkan palsu. (Silsilah al-Ahaadiits adh-Dha-’iifah no. 5296).</p></div></article>
+<div class="session-audio" style="margin-top:36px">
+  <div class="audio-head"><div class="audio-copy"><p class="audio-kicker">Audio</p><p class="audio-title">Dengarkan Dzikir Petang</p></div><a class="audio-btn" href="https://youtu.be/NF3DrA-ldUI?t=13" target="_blank" rel="noopener noreferrer">▶ YouTube</a></div>
+</div>
 <h2 class="complete" style="text-align:left;margin-top:36px">Dzikir Petang / Evening</h2>
 <article class="item"><div class="head" style="cursor:default"><span class="num">01</span><span class="title">Ayat Kursi / Ayat al-Kursi</span><span class="count">1×</span></div>
 <div class="body"><p class="arabic" lang="ar" dir="rtl">اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ</p><p class="latin" lang="ar-Latn">Allāhu lā ilāha illā huwa al-ḥayyu al-qayyūm. Lā ta’khużuhu sinatun wa lā nawm. Lahu mā fī al-samāwāti wa mā fī al-arḍ. Man żā al-lażī yasyfa‘u ‘indahu illā bi iżnih. Ya‘lamu mā baina aidīhim wa mā khalfahum. Wa lā yuḥīṭūna bi syai’in min ‘ilmihi illā bi mā syā’. Wasi‘a kursiyyuhu al-samāwāti wa al-arḍ. Wa lā ya’ūduhu ḥifẓuhumā. Wa huwa al-‘aliyyu al-‘aẓīm.</p>
@@ -302,6 +322,11 @@ const save=()=>store.set("dhikr-progress",JSON.stringify(progress));
 const buzz=ms=>{try{navigator.vibrate&&navigator.vibrate(ms)}catch(e){}};
 const escapeHtml=s=>String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
 
+const SESSION_MEDIA={
+  morning:{title:"Dengarkan Dzikir Pagi",url:"https://youtu.be/8Pyo5IZvA14?t=13",embed:"https://www.youtube-nocookie.com/embed/8Pyo5IZvA14?start=13&playsinline=1&rel=0"},
+  evening:{title:"Dengarkan Dzikir Petang",url:"https://youtu.be/NF3DrA-ldUI?t=13",embed:"https://www.youtube-nocookie.com/embed/NF3DrA-ldUI?start=13&playsinline=1&rel=0"}
+};
+
 /* ---------- rendering ---------- */
 function build(d,i){
   const el=document.createElement("article");
@@ -351,6 +376,19 @@ function setOpen(i,state){
 }
 function render(){
   const items=DATA[session],frag=document.createDocumentFragment();
+  const media=SESSION_MEDIA[session];
+  const audio=document.createElement("section");
+  audio.className="session-audio";
+  audio.innerHTML=`<div class="audio-head"><div class="audio-copy"><p class="audio-kicker">Audio</p><p class="audio-title">${escapeHtml(media.title)}</p></div><button class="audio-btn" type="button" aria-expanded="false">▶ ${lang==="id"?"Putar":"Play"}</button></div><div class="audio-player" hidden><iframe title="${escapeHtml(media.title)}" loading="lazy" src="about:blank" referrerpolicy="strict-origin-when-cross-origin" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe><a class="audio-link" href="${media.url}" target="_blank" rel="noopener noreferrer">${lang==="id"?"Buka langsung di YouTube":"Open directly on YouTube"}</a></div>`;
+  const audioBtn=audio.querySelector(".audio-btn"),player=audio.querySelector(".audio-player"),frame=audio.querySelector("iframe");
+  audioBtn.addEventListener("click",()=>{
+    const open=player.classList.toggle("is-open");
+    player.hidden=!open;
+    audioBtn.setAttribute("aria-expanded",String(open));
+    audioBtn.textContent=open?(lang==="id"?"Sembunyikan":"Hide"):(lang==="id"?"▶ Putar":"▶ Play");
+    frame.src=open?media.embed:"about:blank";
+  });
+  frag.appendChild(audio);
   if(!items.some(d=>openSet.has(key(d.id)))){ // start on the first unfinished dhikr
     const f=items.findIndex(d=>getCount(d)<d.count); if(f>-1) openSet.add(key(items[f].id));
   }
